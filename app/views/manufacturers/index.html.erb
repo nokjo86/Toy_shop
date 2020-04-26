@@ -1,0 +1,20 @@
+<h1>List of Manufacturers</h1>
+<table>
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Location</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <% @manufacturers.each do |manufacturer| %>
+      <td><%= link_to manufacturer.name, manufacturer_path(manufacturer) %></td>
+      <td><%= manufacturer.location %></td>
+      <td><%= link_to 'Edit', edit_manufacturer_path(manufacturer) %></td>
+      <td><%= link_to 'Destroy', manufacturer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

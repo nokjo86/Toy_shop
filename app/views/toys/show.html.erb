@@ -1,0 +1,8 @@
+<p> Name: <%=@toy.name %></p>
+<p> Description: <%=@toy.description %></p>
+<p> Date posted: <%=@toy.date_posted %></p>
+<p> Posted by: <%=@toy.posted_by %></p>
+
+<%= link_to 'Edit', edit_toy_path(@toy.id) %>
+<%= link_to 'Delete',toy_path(@toy.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+

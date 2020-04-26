@@ -1,0 +1,30 @@
+<h1>Toys</h1>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Date posted</th>
+      <th>Posted by</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @toys.each do |toy| %>
+    <tr>
+      <td><img src=<%= toy.images.first.url if defined?(toy.images.first.url)%> alt="Toy Image" width = "100" height = auto></td>
+      <td><%= link_to toy.name, toy_path(toy) %></td>
+      <td><%= toy.description %></td>
+      <td><%= toy.date_posted %></td>
+      <td><%= toy.posted_by %></td>
+      <td><%= link_to toy.manufacturer.name, manufacturer_path(toy.manufacturer) %></td>
+      <td><%= link_to 'User', user_path(toy.user) %> | <%= link_to 'Edit', edit_toy_path(toy) %> | <%= link_to 'Destroy', toy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<p><%= link_to 'Users', users_path%> | 
+<%= link_to 'Manufacturers', manufacturers_path%> </p>
+
+

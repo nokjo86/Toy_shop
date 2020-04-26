@@ -1,0 +1,27 @@
+<%= form_with(model:toy, local:true) do |form| %>
+
+<div class="field">
+  <%= form.label :name%>
+  <%= form.text_field :name%>
+</div>
+
+<div class="field">
+  <%= form.label :description%>
+  <%= form.text_area :description%>
+</div>
+
+<div class="field">
+  <%= form.label :date_posted%>
+  <%= form.date_select :date_posted%>
+</div>
+
+<div class="field">
+  <%= form.label :posted_by%>
+  <%= form.text_field :posted_by%>
+</div>
+
+<div class="action">
+  <%= form.submit "Submit"%>
+</div>
+
+<% end %>

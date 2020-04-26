@@ -1,0 +1,19 @@
+// Place all the styles related to the Toys controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.field label {
+  width: 100px;
+}
+
+tbody td {
+  padding: 0 8px 0 8px ;
+}
+
+thead th {
+  text-align: center;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
